@@ -2,11 +2,9 @@
 
 ## Background
 
-This Strapi upload provider adapts the strapi-provider-upload-aws-s3, bundled with Strapi, to support writes to non-public S3 buckets plus optional download from a CDN endpoint (e.g. AWS Cloudfront).
+Forked from Stephen Trainor' [strapi-provider-upload-aws-s3-plus-cdn](https://www.npmjs.com/package/strapi-provider-upload-aws-s3-plus-cdn) NPM package. [See original Github Repo here.](https://github.com/stephent/strapi-provider-upload-aws-s3-plus-cdn)
+This package additionally accomdates projects where the Amazon Cloudfront S3 bucket access is set to "Don't use OAI (bucket must allow public access)". While this isn't best security practice, sometimes this configuration is necessary and this package accomdates this setup.
 
-Inspired by this discussion: https://github.com/strapi/strapi/issues/5868#issuecomment-705200530
-
-This project is essentially the same as https://www.npmjs.com/package/strapi-provider-upload-aws-s3-cdn, but it includes the required dependencies in package.json.
 ## Configuration
 
 Your configuration is passed down to the provider. (e.g: `new AWS.S3(config)`). You can see the complete list of options [here](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property)
@@ -16,6 +14,9 @@ See the [using a provider](https://strapi.io/documentation/developer-docs/latest
 If using a CDN to deliver media files to end users, you can include a `cdnUrl` property, as shown below.
 
 **Example**
+
+The **allowPublicAccess** variable needs to be set to true if your Cloudfront S3 bucket access is set to "Don't use OAI (bucket must allow public access)".
+Otherwise, make sure the allowPublicAccess variable is set to false.
 
 `./config/plugins.js`
 
@@ -31,17 +32,20 @@ module.exports = ({ env }) => ({
       params: {
         Bucket: env('AWS_BUCKET'),
       },
-      cdnUrl: env("CDN_URL"), // Optional CDN URL - include protofol and trailing forward slash, e.g. 'https://assets.example.com/'
+      cdnUrl: env('CDN_URL'), // Optional CDN URL - include protofol and trailing forward slash, e.g. 'https://assets.example.com/'
+      allowPublicAccess: true,
     },
   },
   // ...
 });
 ```
+
 ## Note
 
 Strapi will use the configured S3 bucket for upload and delete operations, but writes the CDN url (if configured) into the database record.
 
 In the event that you need to change the storage backend in the future, to avoid the need to re-upload assets or to write custom queries to update Strapi database records, it is probably best to configure your CDN to use a URL that you control (e.g. use assets.mydomain.com rather than d12345687abc.cloudfront.net). If you need to change the storage backend later, you can simply update your DNS record.
+
 ## Resources
 
 - [License](LICENSE)

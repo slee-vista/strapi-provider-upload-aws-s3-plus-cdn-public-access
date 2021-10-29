@@ -2,13 +2,14 @@
   "name": "strapi-provider-upload-aws-s3-plus-cdn",
   "version": "1.0.6",
   "description": "AWS S3 provider for strapi upload with optional CDN configuration. Adapted from strapi-provider-upload-aws-s3",
-  "homepage": "https://strapi.io",
+  "homepage": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn",
   "keywords": [
     "upload",
     "aws",
     "s3",
     "strapi",
-    "cdn"
+    "cdn",
+    "cloudfront"
   ],
   "directories": {
     "lib": "./lib"
@@ -21,27 +22,27 @@
     "isProvider": true
   },
   "author": {
-    "email": "stephen@crookneckconsulting.com",
-    "name": "Stephen Trainor"
+    "email": "slee@vistaitgroup.com",
+    "name": "Sung Woo Lee"
   },
   "maintainers": [
     {
-      "name": "Stephen Trainor",
-      "email": "stephen@crookneckconsulting.com"
+      "email": "slee@vistaitgroup.com",
+      "name": "Sung Woo Lee"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/stephent/strapi-provider-upload-aws-s3-plus-cdn.git"
+    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn"
   },
   "bugs": {
-    "url": "https://github.com/stephent/strapi-provider-upload-aws-s3-plus-cdn/issues"
+    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdnissues"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"no tests yet\""
   },

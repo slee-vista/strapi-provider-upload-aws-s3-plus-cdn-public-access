@@ -1,8 +1,8 @@
 {
-  "name": "strapi-provider-upload-aws-s3-plus-cdn",
+  "name": "strapi-provider-upload-aws-s3-plus-cdn-public-access",
   "version": "1.0.6",
   "description": "AWS S3 provider for strapi upload with optional CDN configuration. Adapted from strapi-provider-upload-aws-s3",
-  "homepage": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn",
+  "homepage": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn-public-access",
   "keywords": [
     "upload",
     "aws",
@@ -33,10 +33,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn"
+    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn-public-access"
   },
   "bugs": {
-    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdnissues"
+    "url": "https://github.com/slee-vista/strapi-provider-upload-aws-s3-plus-cdn-public-access/issues"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

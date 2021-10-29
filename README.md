@@ -24,7 +24,7 @@ Otherwise, make sure the allowPublicAccess variable is set to false.
 module.exports = ({ env }) => ({
   // ...
   upload: {
-    provider: 'aws-s3-plus-cdn',
+    provider: 'aws-s3-plus-cdn-public-access',
     providerOptions: {
       accessKeyId: env('AWS_ACCESS_KEY_ID'),
       secretAccessKey: env('AWS_ACCESS_SECRET'),

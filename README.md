@@ -33,7 +33,7 @@ module.exports = ({ env }) => ({
         Bucket: env('AWS_BUCKET'),
       },
       cdnUrl: env('CDN_URL'), // Optional CDN URL - include protofol and trailing forward slash, e.g. 'https://assets.example.com/'
-      allowPublicAccess: true,
+      allowPublicAccess: env('AWS_CDN_ALLOW_PUBLIC_ACCESS'),
     },
   },
   // ...
